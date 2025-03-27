@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scientific Number Accepter</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1f1f1f, #000000);
+      color: #d4af37; /* Warna emas */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar {
+      background-color: #333;
+    }
+    .navbar .nav-link {
+      color: #d4af37;
+      font-weight: 700;
+    }
+    .navbar .nav-link:hover {
+      color: #ffffff;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .section {
+      display: none;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    .section.active {
+      display: block;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border: 2px solid #d4af37;
+      border-radius: 5px;
+      background: transparent;
+      color: #d4af37;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #d4af37;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #b78627;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" href="#">Scientific Number Accepter</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="fileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              File
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="fileDropdown">
+              <li><a class="dropdown-item" href="#" onclick="showSection('save')">Save</a></li>
+              <li><a class="dropdown-item" href="#" onclick="showSection('saveAs')">Save As</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="editDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Edit
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="editDropdown">
+              <li><a class="dropdown-item" href="#" onclick="showSection('copy')">Copy</a></li>
+              <li><a class="dropdown-item" href="#" onclick="showSection('paste')">Paste</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showSection('run')">Run</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showSection('about')">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Konten Utama -->
+  <div class="content">
+    <div id="save" class="section">
+      <h2>Save</h2>
+      <p>Fitur untuk menyimpan file.</p>
+    </div>
+    <div id="saveAs" class="section">
+      <h2>Save As</h2>
+      <p>Fitur untuk menyimpan file dengan nama baru.</p>
+    </div>
+    <div id="copy" class="section">
+      <h2>Copy</h2>
+      <p>Fitur untuk menyalin teks atau elemen.</p>
+    </div>
+    <div id="paste" class="section">
+      <h2>Paste</h2>
+      <p>Fitur untuk menempelkan teks atau elemen yang telah disalin.</p>
+    </div>
+    <div id="run" class="section active">
+      <h2>Run</h2>
+      <p>Masukkan bilangan (format desimal atau notasi ilmiah):</p>
+      <input type="text" id="numberInput" placeholder="Masukkan bilangan">
+      <br>
+      <button onclick="validateNumber()">Run</button>
+      <p id="result"></p>
+    </div>
+    <div id="about" class="section">
+      <h2>About Us</h2>
+      <p>Nama: Aerangga Hizkia Putra Suhendro</p>
+      <p>NIM: 231011060067</p>
+      <p>Kelas: Teori Bahasa dan Otomata C</p>
+      <p>Prodi: Sistem Informasi</p>
+    </div>
+  </div>
+  
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Menampilkan section sesuai menu yang diklik
+    function showSection(sectionId) {
+      var sections = document.querySelectorAll('.section');
+      sections.forEach(function(section) {
+       
+::contentReference[oaicite:2]{index=2}
+ 
